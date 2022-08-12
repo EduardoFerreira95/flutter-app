@@ -1,7 +1,7 @@
-// ignore: file_names
 // ignore_for_file: prefer_void_to_null
+// ignore: file_names
 import 'package:http/http.dart' as http;
-import 'package:app/Http/Utils/JSONTransformer.dart';
+import 'package:app/Http/Utils/jsonParse.dart';
 
 class HttpResponse<T> {
   late T data;
@@ -31,5 +31,5 @@ Future<HttpResponse<Null>> makeDeleteCall<T extends dynamic>(String endpoint, T?
 Future<HttpResponse<T>> makeGetCall<T extends dynamic>(String endpoint) async {
   var response = await http.get(makeBaseURL(endpoint));
   
-  return HttpResponse(makeJSON<T>(response.body), response.statusCode);
+  return HttpResponse(jsonParse<T>(response.body), response.statusCode);
 }
