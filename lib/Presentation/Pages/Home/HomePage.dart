@@ -1,8 +1,9 @@
+import 'package:app/Presentation/Pages/Factory/routeFactory.dart';
+import 'package:app/Presentation/Providers/UserProvider/UserBinding.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   const Home({ Key? key }) : super(key: key);
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,17 +12,15 @@ class Home extends StatelessWidget {
         color: Colors.deepOrange,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[Container(
-            alignment: Alignment.center, 
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.black87,
-            ),
-          )],
+          // children: <Widget>[
+          //   ListView(
+          //     children: <Widget>,
+          //   )
+          // ],
         ),
       ),
     );
   }
 }
+
+final homeRoute = routeFactory.makeRoutes([PageList('/home', const Home(), UserBinding())]);

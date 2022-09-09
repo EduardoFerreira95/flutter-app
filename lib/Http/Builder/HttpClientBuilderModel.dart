@@ -5,8 +5,8 @@ class HttpResponse<T> {
 }
 
 abstract class HttpClientBuilderModel {
-  Future<HttpResponse<Null>> makePostCall<T extends dynamic>(String endpoint, T? body);
-  Future<HttpResponse<Null>> makePutCall<T extends dynamic>(String endpoint, T? body);
-  Future<HttpResponse<Null>> makeDeleteCall<T extends dynamic>(String endpoint, T? body);
-  Future<HttpResponse<T>> makeGetCall<T extends dynamic>(String endpoint);
+  Future<HttpResponse> makePostCall<T extends dynamic>(String endpoint, T? body);
+  Future<HttpResponse> makePutCall<T extends dynamic>(String endpoint, T? body);
+  Future<HttpResponse> makeDeleteCall<T extends dynamic>(String endpoint, T? body);
+  Future<HttpResponse> makeGetCall<T extends dynamic>(String endpoint);
 }
